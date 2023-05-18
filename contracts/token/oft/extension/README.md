@@ -30,7 +30,7 @@ let adapterParams = ethers.utils.solidityPack(
 )
   `
   * More details [here](https://layerzero.gitbook.io/docs/guides/advanced/relayer-adapter-parameters)
-  * From the output of `enstimateSendFree`, `nativeFee` field provides the required gas
+  * From the output of `estimateSendFee`, `nativeFee` field provides the required gas
 * The user then signs a `sendFrom(address _from, uint16 _dstChainId, bytes calldata _toAddress, uint _amount, address payable _refundAddress, address _zroPaymentAddress, bytes calldata _adapterParams)`
   * e.g., `proxyERC20.sendFrom(0xae…, 116, 0xae…, 5000000000000000000, 0xae…, 0x0000000000000000000000000000000000000000, 0x0001000000000000000000000000000000000000000000000000000000000007a120)`
   * Make sure to put the gas calculated using the previous step (estimateSendFree.nativeFee) in the transaction value.
